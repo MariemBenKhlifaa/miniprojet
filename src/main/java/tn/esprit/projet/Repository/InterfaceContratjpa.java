@@ -15,6 +15,7 @@ public interface InterfaceContratjpa extends JpaRepository<Contrat,Long> {
 
     @Query(" select  SUM(ct.montantContrat) FROM Contrat ct")
     public Long ContContratArchive();
+    @Query(" select  MAX(ct.montantContrat) FROM Contrat ct")
 
-
+    public Long MontantMaxContrat();
 }

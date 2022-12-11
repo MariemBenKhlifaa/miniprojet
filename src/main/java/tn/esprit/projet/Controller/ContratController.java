@@ -73,6 +73,12 @@ public class ContratController {
         Long avg=  contratService.ContContratArchive();
          return  avg;
     }
+    @GetMapping( value = "/MontantMaxContrat")
+    @ResponseBody
+    public Long MontantMaxContrat(){
+        Long Mnt=  contratService.MontantMaxContrat();
+        return  Mnt;
+    }
     @PutMapping( value ="/desaffecterEtudiantAuContrat/{id}")
     public void desaffecterEtudiantAuContrat(@PathVariable("id")Long idContrat ){
         contratService.desaffecterEtudiantAuContrat(idContrat);

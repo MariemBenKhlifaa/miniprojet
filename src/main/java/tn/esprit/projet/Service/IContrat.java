@@ -16,6 +16,8 @@ public interface IContrat {
     public float getChiffreAffaireEntreDeuxDate(Date startDate, Date endDate);
     public Long countContrat();
     public Long ContContratArchive();
+    public Long MontantMaxContrat();
+
    public  void desaffecterEtudiantAuContrat( Long id );
 
 

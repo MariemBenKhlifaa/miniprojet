@@ -104,9 +104,14 @@ public class ContratService implements IContrat {
 
     @Override
     public Long ContContratArchive() {
-// TODO Auto-generated method stub
 
-        return  interfaceContratjpa.ContContratArchive();    }
+        return  interfaceContratjpa.ContContratArchive();
+    }
+
+    @Override
+    public Long MontantMaxContrat() {
+        return interfaceContratjpa.MontantMaxContrat();
+    }
 
     @Override
     public void desaffecterEtudiantAuContrat(Long id) {
