@@ -2,6 +2,7 @@ package tn.esprit.projet.Service;
 
 import tn.esprit.projet.entities.Contrat;
 import tn.esprit.projet.entities.Etudiant;
+import tn.esprit.projet.entities.Specialite;
 
 import java.util.Date;
 import java.util.List;
@@ -17,8 +18,8 @@ public interface IContrat {
     public Long countContrat();
     public Long ContContratArchive();
     public Long MontantMaxContrat();
+    public float SommeMontantSelonSpecialie(Specialite specialite);
 
    public  void desaffecterEtudiantAuContrat( Long id );
-
 
 }

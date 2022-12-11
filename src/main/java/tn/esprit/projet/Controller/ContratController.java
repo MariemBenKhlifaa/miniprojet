@@ -7,6 +7,8 @@ import tn.esprit.projet.Service.ContratService;
 import tn.esprit.projet.Service.IContrat;
 import tn.esprit.projet.entities.Contrat;
 import tn.esprit.projet.Service.PdfService;
+import tn.esprit.projet.entities.Specialite;
+
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -64,24 +66,30 @@ public class ContratController {
     @GetMapping("/numberOfContrat")
     @ResponseBody
     public Long countReclamation() {
-        Long countContrat = contratService.countContrat() ;
+        Long countContrat = iContrat.countContrat() ;
         return countContrat;
     }
     @GetMapping( value = "/ContContratMontant")
     @ResponseBody
     public Long ContContratArchive(){
-        Long avg=  contratService.ContContratArchive();
+        Long avg=  iContrat.ContContratArchive();
          return  avg;
     }
     @GetMapping( value = "/MontantMaxContrat")
     @ResponseBody
     public Long MontantMaxContrat(){
-        Long Mnt=  contratService.MontantMaxContrat();
+        Long Mnt=  iContrat.MontantMaxContrat();
         return  Mnt;
     }
     @PutMapping( value ="/desaffecterEtudiantAuContrat/{id}")
     public void desaffecterEtudiantAuContrat(@PathVariable("id")Long idContrat ){
-        contratService.desaffecterEtudiantAuContrat(idContrat);
+        iContrat.desaffecterEtudiantAuContrat(idContrat);
     }
+    @GetMapping( value ="/SomeSpecContrat/{specialite}")
+    public float SommeMontantSelonSpecialie( @PathVariable( "specialite") Specialite specialite){
+
+      return   iContrat.SommeMontantSelonSpecialie(specialite);
+    }
+
 
 }

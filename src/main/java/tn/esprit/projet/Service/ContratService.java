@@ -113,6 +113,7 @@ public class ContratService implements IContrat {
         return interfaceContratjpa.MontantMaxContrat();
     }
 
+
     @Override
     public void desaffecterEtudiantAuContrat(Long id) {
         Contrat as = interfaceContratjpa.findById(id).orElse(null);
@@ -120,6 +121,11 @@ public class ContratService implements IContrat {
         interfaceContratjpa.save(as);
     }
 
+    @Override
+    public float SommeMontantSelonSpecialie(Specialite s) {
+
+        return interfaceContratjpa.SommeMontantSelonSpecialie(s);
+    }
 
 
 }
