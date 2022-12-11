@@ -79,4 +79,10 @@ public class EtudiantController {
     public Etudiant affecteratudiantcontratequipe(@PathVariable("IdE") Long ide,@PathVariable("Idc") Long idC,@RequestBody Etudiant e ) {
         return iEtudiant.addetudianttoequipeandecontrat(e,idC,ide);
     }
+    @GetMapping("/etudpardepat/{idDepart}")
+    public List<Etudiant> findEtudiantByDepartement_idDepart(@PathVariable("idDepart") Long idDepart){
+        return iEtudiant.findEtudiantByDepartement_idDepart(idDepart);
+    }
+
+
 }

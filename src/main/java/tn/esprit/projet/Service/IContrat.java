@@ -14,4 +14,9 @@ public interface IContrat {
     public void deleteContrat(Long id);
     public Contrat affectcontrattoetudiant(Contrat contrat, String nom, String prenom);
     public float getChiffreAffaireEntreDeuxDate(Date startDate, Date endDate);
+    public Long countContrat();
+    public Long ContContratArchive();
+   public  void desaffecterEtudiantAuContrat( Long id );
+
+
 }

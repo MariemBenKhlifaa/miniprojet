@@ -21,5 +21,6 @@ public interface IEtudiant {
     public void affecteretudiantdepartement(int idetudiant,Long iddepartement);
     public Etudiant addetudianttoequipeandecontrat(Etudiant e,Long idc,Long idE);
     //public Etudiant affectcontrattoetudiant(Contrat contrat,String nom,String prenom);
+    public List<Etudiant> findEtudiantByDepartement_idDepart(Long idDepart);
 
 }

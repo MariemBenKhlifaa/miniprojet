@@ -96,4 +96,25 @@ public class ContratService implements IContrat {
 
         return 0;
     }
+
+    @Override
+    public Long countContrat() {
+        return interfaceContratjpa.count();
+    }
+
+    @Override
+    public Long ContContratArchive() {
+// TODO Auto-generated method stub
+
+        return  interfaceContratjpa.ContContratArchive();    }
+
+    @Override
+    public void desaffecterEtudiantAuContrat(Long id) {
+        Contrat as = interfaceContratjpa.findById(id).orElse(null);
+        as.setEtudiant(null);  ;
+        interfaceContratjpa.save(as);
+    }
+
+
+
 }

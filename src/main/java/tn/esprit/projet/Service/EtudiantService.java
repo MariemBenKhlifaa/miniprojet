@@ -96,7 +96,10 @@ EtudiantService implements IEtudiant {
         return e;
     }
 
-
+    @Override
+    public List<Etudiant> findEtudiantByDepartement_idDepart(Long idDepart) {
+        return interfacejpa.findEtudiantByDepartement_idDepart(idDepart);
+    }
 
 
 }

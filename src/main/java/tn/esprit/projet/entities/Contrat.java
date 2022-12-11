@@ -1,5 +1,6 @@
 package tn.esprit.projet.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -8,6 +9,7 @@ import lombok.ToString;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Getter
@@ -28,8 +30,11 @@ public class Contrat implements Serializable {
     @Temporal (TemporalType.DATE)
     private Date DateFinContrat;
     private  boolean archive;
+    private Integer montantContrat;
     @Enumerated(EnumType.STRING)
     private Specialite specialite;
+    @JsonIgnore
+
     @ManyToOne(cascade = CascadeType.ALL)
     Etudiant Etudiant;
 
