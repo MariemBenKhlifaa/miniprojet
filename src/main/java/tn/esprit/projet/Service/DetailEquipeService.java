@@ -35,4 +35,10 @@ public class DetailEquipeService implements IDetailEquipe{
       interfaceDtailEquipejpa.deleteById(id);
 
     }
+
+    @Override
+    public DetailEquipe getEquipeDetailEquipe (Long idEquipe){
+
+        return interfaceDtailEquipejpa.findDetailEquipeByEquipeIdEquipe(idEquipe);
+    }
 }

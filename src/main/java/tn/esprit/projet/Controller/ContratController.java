@@ -16,7 +16,7 @@ public class ContratController {
     public List<Contrat> getallContrat(){return iContrat.getallContrat();}
 
     @PostMapping("/addcontrat")
-    public Contrat AddContrat(Contrat e){return iContrat.AddContrat(e);}
+    public Contrat AddContrat(@RequestBody Contrat e){return iContrat.AddContrat(e);}
     @GetMapping("/getonecontrat/{id}")
     public Contrat findContrat(@PathVariable Long id){return iContrat.findContrat(id);}
     @PutMapping("/updatecontrat")

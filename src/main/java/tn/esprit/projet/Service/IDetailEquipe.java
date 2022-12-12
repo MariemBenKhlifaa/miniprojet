@@ -11,4 +11,6 @@ public interface IDetailEquipe {
     public DetailEquipe finddetailequipe(Long id);
     public DetailEquipe updatedetailequipe(DetailEquipe e);
     public void deletedetailequipe(Long id);
+
+    public DetailEquipe getEquipeDetailEquipe(Long idEquipe);
 }

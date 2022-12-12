@@ -1,5 +1,6 @@
 package tn.esprit.projet.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -30,6 +31,7 @@ public class Contrat implements Serializable {
     private  boolean archive;
     @Enumerated(EnumType.STRING)
     private Specialite specialite;
+    @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL)
     Etudiant Etudiant;
 
