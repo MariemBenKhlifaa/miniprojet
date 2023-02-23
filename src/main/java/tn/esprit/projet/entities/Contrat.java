@@ -1,6 +1,8 @@
 package tn.esprit.projet.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -33,13 +35,12 @@ public class Contrat implements Serializable {
     private Integer montantContrat;
     @Enumerated(EnumType.STRING)
     private Specialite specialite;
-    @JsonIgnore
 
     @ManyToOne(cascade = CascadeType.ALL)
-    Etudiant Etudiant;
+    Etudiant etudiant;
 
     public Contrat() {
     }
-// Constructeur et accesseurs (getters) et mutateurs (setters)
+
 
 }

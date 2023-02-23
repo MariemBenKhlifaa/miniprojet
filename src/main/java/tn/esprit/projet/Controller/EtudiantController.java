@@ -21,6 +21,8 @@ import java.util.Set;
 import java.util.function.Function;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
+
 public class EtudiantController {
 
 
@@ -83,6 +85,11 @@ public class EtudiantController {
     public List<Etudiant> findEtudiantByDepartement_idDepart(@PathVariable("idDepart") Long idDepart){
         return iEtudiant.findEtudiantByDepartement_idDepart(idDepart);
     }
+    @ResponseBody
+    @GetMapping (value = "/getContE/{idContrat}")
+    public List<Etudiant>findEtudiantByContratsIdContrat(@PathVariable ("idContrat" ) Long idContrat){
 
+        return iEtudiant.findEtudiantByContratsIdContrat(idContrat);
+    }
 
 }

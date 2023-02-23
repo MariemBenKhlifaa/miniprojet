@@ -122,6 +122,14 @@ public class ContratService implements IContrat {
     }
 
     @Override
+    public Long MontantMinContrat() {
+        return interfaceContratjpa.MontantMinContrat();
+    }
+
+
+
+
+    @Override
     public float SommeMontantSelonSpecialie(Specialite s) {
 
         return interfaceContratjpa.SommeMontantSelonSpecialie(s);

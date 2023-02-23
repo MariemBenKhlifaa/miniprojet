@@ -7,7 +7,9 @@ import tn.esprit.projet.entities.Contrat;
 import tn.esprit.projet.entities.Specialite;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
+import java.util.function.LongToIntFunction;
 
 @Repository
 public interface InterfaceContratjpa extends JpaRepository<Contrat,Long> {
@@ -22,5 +24,11 @@ public interface InterfaceContratjpa extends JpaRepository<Contrat,Long> {
     @Query(" select  SUM(ct.montantContrat) FROM Contrat ct where ct.specialite = :specialite")
 
     public float SommeMontantSelonSpecialie(Specialite specialite);
+
+    @Query(" select  Min(ct.montantContrat) FROM Contrat ct")
+
+    public Long MontantMinContrat();
+    //public List<Contrat> findContratByEtudiantIdEtudiant(int idEtudiant);
+
 
 }

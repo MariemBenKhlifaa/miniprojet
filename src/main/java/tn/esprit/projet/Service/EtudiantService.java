@@ -101,5 +101,10 @@ EtudiantService implements IEtudiant {
         return interfacejpa.findEtudiantByDepartement_idDepart(idDepart);
     }
 
+    @Override
+    public List<Etudiant> findEtudiantByContratsIdContrat(Long idContrat) {
+        return  interfacejpa.findEtudiantByContratsIdContrat(idContrat);
+    }
+
 
 }

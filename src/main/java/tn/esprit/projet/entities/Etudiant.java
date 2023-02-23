@@ -1,5 +1,7 @@
 package tn.esprit.projet.entities;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -33,8 +35,10 @@ public class Etudiant implements Serializable {
     @ManyToOne(cascade = CascadeType.ALL)
     Departement departement;
     @JsonIgnore
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "Etudiant")
-    private Set<Contrat> Contrats;
+
+    @OneToMany(mappedBy = "etudiant")
+    private Set<Contrat> contrats;
+
     @JsonIgnore
     @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 
@@ -42,6 +46,5 @@ public class Etudiant implements Serializable {
 
     public Etudiant() {
     }
-    // Constructeur et accesseurs (getters) et mutateurs (setters)
 
 }

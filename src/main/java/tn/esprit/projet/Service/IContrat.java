@@ -21,5 +21,6 @@ public interface IContrat {
     public float SommeMontantSelonSpecialie(Specialite specialite);
 
    public  void desaffecterEtudiantAuContrat( Long id );
+    public Long MontantMinContrat();
 
 }

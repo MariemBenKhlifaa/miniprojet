@@ -75,6 +75,7 @@ public class ContratController {
         Long avg=  iContrat.ContContratArchive();
          return  avg;
     }
+
     @GetMapping( value = "/MontantMaxContrat")
     @ResponseBody
     public Long MontantMaxContrat(){
@@ -90,6 +91,13 @@ public class ContratController {
 
       return   iContrat.SommeMontantSelonSpecialie(specialite);
     }
+
+    @GetMapping( value = "/MontantMin")
+    @ResponseBody
+    public  Long MontantMinContrant(){
+        return  iContrat.MontantMinContrat();
+    }
+
 
 
 }

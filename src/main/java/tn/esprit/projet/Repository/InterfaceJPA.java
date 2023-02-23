@@ -18,4 +18,5 @@ public interface InterfaceJPA extends JpaRepository<Etudiant,Integer> {
     Etudiant findEtudiantByNomAndPrenom(String nom,String prenom);
 
    public List<Etudiant> findEtudiantByDepartement_idDepart(Long idDepart);
+    public  List<Etudiant> findEtudiantByContratsIdContrat(Long idContrat);
 }
